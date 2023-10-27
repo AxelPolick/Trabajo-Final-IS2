@@ -1,0 +1,49 @@
+﻿@model PF_Ingenieria_Software_II.Models.Usuario
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo - Login</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body class="login">
+    <div class="container">
+        <div class="wrapper">
+            <form asp-action="Authenticate" method="post">
+                <h1>
+                    Login
+                </h1>
+
+                <div class="input-box">
+                    <input asp-for="Correo" type="email" name="" id="" placeholder="Email">
+                    <i class="uil uil-envelope-alt"></i>
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+
+                <div class="input-box">
+                    <input asp-for="Contrasena" type="password" name="" id="" placeholder="Contraseña">
+                    <i class="uil uil-lock"></i>
+                    <span asp-validation-for="Contrasena" class="text-danger"></span>
+                </div>
+
+                <input type="submit" value="Iniciar sesión" class="btn">
+                <div class="register-link">
+                    <p>
+                        No tienes cuenta?
+                        <a href="@Url.Action("Create", "Usuario")">Registrate</a>
+                    </p>
+                </div>
+                <div class="return-link">
+                    <a href="@Url.Action("Index", "Home")"><i class="uil uil-arrow-circle-left"></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
