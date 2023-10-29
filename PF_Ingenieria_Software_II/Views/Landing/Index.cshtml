@@ -1,0 +1,175 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISII PF</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo">Polideportivo</a>
+            <div class="navigation">
+                <div class="nav-items">
+                    <i class="uil uil-times nav-close-btn"></i>
+                    <a href="#inicio"> Inicio</a>
+                    <a href="#nosotros"> Nosotros</a>
+                    <a href="#cursos"> Cursos</a>
+                    <a href="@Url.Action("Login", "Usuario")" class="btn-login"> Iniciar Sesion</a>
+                </div>
+            </div>
+            <i class="uil uil-apps nav-menu-btn"></i>
+        </div>
+    </header>
+
+    <section class="inicio" id="inicio">
+        <div class="container-wrap">
+            <div class="wrap-colum">
+                <img src="~/img/hokey.png" alt="">
+            </div>
+            <div class="wrap-colum">
+                <div class="wrapper">
+                    <h1>Polideportivo</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt perferendis optio, velit ut vel officia, blanditiis ratione culpa facere eum suscipit quam accusamus iusto dolorem exercitationem harum molestiae accusantium earum!</p>
+                    <a href="#cursos" class="btn-inicio">Inscribete ya!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <h2>Nosotros</h2>
+        <div class="gallery">
+            <div>
+                <img src="~/img/a1.jpeg" alt="">
+            </div>
+            <div class="h-stretch">
+                <img src="~/img/a2.jpeg" alt="">
+            </div>
+            <div class="v-stretch">
+                <img src="~/img/a3.jpg" alt="">
+            </div>
+            <div class="v-stretch">
+                <img src="~/img/a4.jpeg" alt="">
+            </div>
+            <div class="v-stretch">
+                <img src="~/img/a9.jpeg" alt="">
+            </div>
+            <div class="h-stretch">
+                <img src="~/img/a5.jpeg" alt="">
+            </div>
+            <div>
+                <img src="~/img/a6.jpeg" alt="">
+            </div>
+            <div class="h-stretch">
+                <img src="~/img/a7.jpg" alt="">
+            </div>
+            <div class="h-stretch">
+                <img src="~/img/a8.jpeg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="cursos" id="cursos">
+        <h2>Cursos</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="img-box">
+                    <img src="~/img/basket.jpeg" alt="">
+                </div>
+                <div class="text-box">
+                    <h3>Basket</h3>
+                    <p class="tag">5 - 10 años</p>
+                    <p class="tag">11 - 17 años</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="~/img/futbol.jpg" alt="">
+                </div>
+                <div class="text-box">
+                    <h3>Futbol</h3>
+                    <p class="tag">5 - 10 años</p>
+                    <p class="tag">11 - 17 años</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="~/img/karate.webp" alt="">
+                </div>
+                <div class="text-box">
+                    <h3>Karate</h3>
+                    <p class="tag"> 4 - 7 años</p>
+                    <p class="tag"> 8 - 14 años</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="~/img/natacion.png" alt="">
+                </div>
+                <div class="text-box">
+                    <h3>Natacion</h3>
+                    <p class="tag">1 - 4 años</p>
+                    <p class="tag">5 - 15 años</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="~/img/tennis.jpeg" alt="">
+                </div>
+                <div class="text-box">
+                    <h3>Tennis</h3>
+                    <p class="tag">5 - 10 años</p>
+                    <p class="tag">11 - 17 años</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-box">
+                    <img src="~/img/volley.jpg" alt="">
+                </div>
+                <div class="text-box">
+                    <h3>VolleyBall</h3>
+                    <p class="tag">5 - 10 años</p>
+                    <p class="tag">11 - 17 años</p>
+                </div>
+            </div>
+        </div>
+        <div class="matricula-box">
+            <a href="@Url.Action("Login", "Usuario")" class="btn-inicio">Matriculate ya!</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="column">
+                <div class="footer-link">
+                    <a href=""><i class="uil uil-telegram"></i></a>
+                </div>
+                <div class="footer-link">
+                    <a href=""><i class="uil uil-whatsapp"></i></a>
+                </div>
+                <div class="footer-link">
+                    <a href=""><i class="uil uil-facebook"></i></a>
+                </div>
+                <div class="footer-link">
+                    <a href=""><i class="uil uil-instagram-alt"></i></a>
+                </div>
+                <div class="footer-link">
+                    <a href=""><i class="uil uil-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy;2023 <span class="span-copy">Polideportivo</span></p>
+        </div>
+    </footer>
+
+    <script src="~/js/main.js"></script>
+</body>
+</html>
+

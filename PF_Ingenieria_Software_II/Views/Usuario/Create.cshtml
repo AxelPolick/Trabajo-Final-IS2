@@ -1,0 +1,123 @@
+﻿@model PF_Ingenieria_Software_II.Models.Usuario
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo - SignUp</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body class="login">
+    <div class="container">
+        <div class="wrapper register">
+            <form asp-controller="Usuario" asp-action="CreateUsuario" method="post">
+                <h1>
+                    SignUp
+                </h1>
+
+                <div class="input-box">
+                    <input asp-for="Nombres" type="text" name="Nombres" id="Nombres" placeholder="Nombre Completo" required>
+                    <i class="uil uil-user"></i>
+                    <span asp-validation-for="Nombres" class="text-danger"></span>
+                </div>
+
+                <div class="column">
+                    <div class="input-box">
+                        <input asp-for="ApellidoPaterno" type="text" name="ApellidoPaterno" id="ApellidoPaterno" placeholder="Apellido Paterno" required>
+                        <i class="uil uil-users-alt"></i>
+                        <span asp-validation-for="ApellidoPaterno" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <input asp-for="ApellidoMaterno" type="text" name="ApellidoMaterno" id="ApellidoMaterno" placeholder="Apellido Materno" required>
+                        <i class="uil uil-users-alt"></i>
+                        <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
+                    </div>
+                </div>
+                
+
+                <div class="column">
+                    <div class="input-box">
+                        <input asp-for="Telefono" type="number" name="Telefono" id="Telefono" placeholder="Teléfono" required>
+                        <i class="uil uil-phone"></i>
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <input asp-for="Edad" type="number" name="Edad" id="Edad" placeholder="Edad" required>
+                        <i class="uil uil-phone"></i>
+                        <span asp-validation-for="Edad" class="text-danger"></span>
+                    </div>
+
+                    @*<div class="input-box">
+                        <input asp-for="Edad" type="date" name="" id="" placeholder="Fecha de Nacimiento" required>
+                        <span asp-validation-for="Edad" class="text-danger"></span>
+                    </div>*@
+                </div>
+
+                <div class="column">
+                    <div class="input-box">
+                        <select asp-for="DocumentoId" asp-items="ViewBag.DocumentoId">
+                            @*<option value="">Tipo de Documento</option>
+                            <option value="dni">DNI</option>
+                            <option value="carnet_extranjeria">Carnet de Extranjeria</option>
+                            <option value="ruc">Ruc</option>*@
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <input asp-for="NroDocumento" type="number" name="NroDocumento" id="NroDocumento" placeholder="Numero de Documento" required>
+                        <i class="uil uil-postcard"></i>
+                        <span asp-validation-for="NroDocumento" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <input asp-for="Direccion" type="text" name="Direccion" id="Direccion" placeholder="Dirección" required>
+                    <i class="uil uil-image"></i>
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+
+
+                <div class="input-box">
+                    <input asp-for="Correo" type="email" name="Correo" id="Correo" placeholder="Email" required>
+                    <i class="uil uil-envelope-alt"></i>
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+
+                <div class="column">
+                    <div class="input-box">
+                        <input asp-for="Contrasena" type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" required>
+                        <i class="uil uil-lock"></i>
+                        <span asp-validation-for="Contrasena" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" name="" id="" placeholder="Repetir Contraseña" required>
+                        <i class="uil uil-padlock"></i>
+                    </div>
+                </div>
+
+                <input type="submit" value="Crear Cuenta" class="btn">
+                <div class="register-link">
+                    <p>
+                        Ya tienes cuenta?
+                        <a href="@Url.Action("Login", "Usuario")">Inicia sesión</a>
+                    </p>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
