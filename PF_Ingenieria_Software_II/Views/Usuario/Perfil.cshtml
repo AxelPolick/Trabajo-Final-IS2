@@ -1,0 +1,144 @@
+﻿@using PF_Ingenieria_Software_II.Models
+@model PF_Ingenieria_Software_II.Models.Usuario
+@using PF_Ingenieria_Software_II.Services
+@{
+    ViewData["Title"] = "Perfil";
+    Usuario usuario = Model;
+    var rolService = ViewBag.RolService as RolService;
+    var documentTypeService = ViewBag.DocumentTypeService as DocumentTypeService;
+    string nombre_rol = string.Empty;
+    string nombre_documento = string.Empty;
+    if (rolService != null)
+    {
+        nombre_rol = rolService.FindRol(Model.RolId).Nombre;
+        nombre_documento = documentTypeService.FindDocumentType(Model.DocumentoId).Nombre;
+    }
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col-sm-12">
+                    <div class="page-sub-header">
+                        <h3 class="page-title">Mi Perfil</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card comman-shadow">
+                    <div class="card-body">
+                        <form asp-controller="Usuario" asp-action="EditUsuario" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title student-info">Información del Usuario </h5>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Nombre <span class="login-danger">*</span></label>
+                                        <input asp-for="Nombres" name="Nombres" id="Nombres" class="form-control" type="text" value="@Model.Nombres">
+                                        <span asp-validation-for="Nombres" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Apellido Paterno <span class="login-danger">*</span></label>
+                                        <input asp-for="ApellidoPaterno" type="text" name="ApellidoPaterno" id="ApellidoPaterno" class="form-control" value="@Model.ApellidoPaterno">
+                                        <span asp-validation-for="ApellidoPaterno" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Apellido Materno <span class="login-danger">*</span></label>
+                                        <input asp-for="ApellidoMaterno" type="text" name="ApellidoMaterno" id="ApellidoMaterno" class="form-control" value="@Model.ApellidoMaterno">
+                                        <span asp-validation-for="ApellidoMaterno" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Edad <span class="login-danger">*</span></label>
+                                        <input asp-for="Edad" type="number" name="Edad" id="Edad" class="form-control" value="@Model.Edad">
+                                        <span asp-validation-for="Edad" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Telefono </label>
+                                        <input asp-for="Telefono" type="number" name="Telefono" id="Telefono" class="form-control" value="@Model.Telefono">
+                                        <span asp-validation-for="Telefono" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Direccion </label>
+                                        <input asp-for="Direccion" type="text" name="Direccion" id="Direccion" class="form-control" value="@Model.Direccion">
+                                        <span asp-validation-for="Direccion" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Rol <span class="login-danger">*</span></label>
+                                        <input class="form-control" type="text" value="@nombre_rol" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Tipo de Documento <span class="login-danger">*</span></label>
+                                        <input class="form-control" type="text" value="@nombre_documento" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Número de Documento <span class="login-danger">*</span></label>
+                                        <input asp-for="NroDocumento" type="number" name="NroDocumento" id="NroDocumento" class="form-control" value="@Model.NroDocumento">
+                                        <span asp-validation-for="NroDocumento" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Nombre Usuario <span class="login-danger">*</span></label>
+                                        <input class="form-control" type="text" value="@Model.NombreUsuario" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>E-Mail <span class="login-danger">*</span></label>
+                                        <input asp-for="Correo" type="email" name="Correo" id="Correo" class="form-control" value="@Model.Correo">
+                                        <span asp-validation-for="Correo" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Contraseña <span class="login-danger">*</span></label>
+                                        <input type="password" class="form-control" value="@Model.Contrasena" disabled>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="student-submit">
+                                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

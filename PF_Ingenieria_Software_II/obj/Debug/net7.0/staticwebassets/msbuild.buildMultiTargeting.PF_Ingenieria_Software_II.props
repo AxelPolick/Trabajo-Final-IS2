@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PF_Ingenieria_Software_II.props" />
+</Project>

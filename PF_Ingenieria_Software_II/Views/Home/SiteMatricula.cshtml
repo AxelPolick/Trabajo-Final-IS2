@@ -1,0 +1,42 @@
+﻿@model PaymentViewModel
+@{
+    Layout = null;
+    ViewBag.Title = "Site Matricula";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="jumbotron">
+            @if(TempData["error"] != null)
+            {
+                <div class="text-danger">
+                    @TempData["error"]
+                </div>
+            }
+            else if (TempData["succes"] != null)
+            {
+                <div class="text-danger">
+                    @TempData["succes"]
+                </div>
+            }
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="https://spacegamer.com.ar/img/Public/1058-producto-mic-hx3-2589.jpg" width="200" height="250" />
+                </div>
+                <div class="col-sm-9">
+                    <h3 class="text-primary">Curso Karate: Martes 9 - 10 am</h3>
+                    <p>
+                        Nullam faucibus at felis quis mattis. Vivamus non elementum risus. Mauris ac ipsum suscipit,
+                        aliquam felis a, sodales nisi. Suspendisse potenti. Aenean non ornare risus.
+                    </p>
+                    <form method="post" asp-action="PayUsingCard">
+                        <label class="text-danger">Ingresar Precio</label>
+                        <input asp-for="Amount" id="precio" />
+                        <button class="btn btn-success" type="submit"><i class="fab fa-paypal"></i> Realizar Pago</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
