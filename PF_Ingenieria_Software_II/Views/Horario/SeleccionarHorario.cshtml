@@ -1,0 +1,39 @@
+﻿@model List<PF_Ingenieria_Software_II.Models.Sesion>
+@{
+
+}
+<div class="page-wrapper">
+    <form method="post" asp-controller="Horario" asp-action="SeleccionarSesion">
+        @if (Model != null && Model.Count > 0)
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Fin</th>
+                        <th>Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sesion in Model)
+                    {
+                        <tr>
+                            <td>@(sesion.Dias != null ? sesion.Dias : "")</td>
+                            <td>@(sesion.HoraInicio?.ToString("HH:mm") ?? "")</td>
+                            <td>@(sesion.HoraFin?.ToString("HH:mm") ?? "")</td>
+                            <td>
+                                <input type="hidden" name="idSesion" value="@sesion.Id" />
+                                <button type="submit">Seleccionar</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Modelo nulo o sin sesiones disponibles.</p>
+        }
+    </form>
+</div>
