@@ -1,0 +1,63 @@
+﻿@model PF_Ingenieria_Software_II.Models.Cargo
+@using PF_Ingenieria_Software_II.Services
+@{
+    ViewData["Title"] = "Registrar Cargo";
+    var cargoService = ViewBag.CargoService as CargoService;
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Registrar un nuevo Cargo</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("ListarCargos", "Cargo")">Cargos</a></li>
+                        <li class="breadcrumb-item active">Crear Cargo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-controller="Cargo" asp-action="CreateCargo" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Información de Cargo Nuevo</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>ID Cargo <span class="login-danger">*</span></label>
+                                        <input asp-for="Id" type="text" name="Id" class="form-control" id="idCargo" value="@cargoService.Size()" readonly>
+                                        <span asp-validation-for="Id" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Nombre Cargo <span class="login-danger">*</span></label>
+                                        <input asp-for="Nombre" type="text" name="Nombre" class="form-control" id="Nombre" placeholder="Nombre del cargo" required>
+                                        <span asp-validation-for="Nombre" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Descripción <span class="login-danger">*</span></label>
+                                        <input asp-for="Descripcion" type="text" name="Descripcion" class="form-control" id="Descripcion" placeholder="Descripcion" required>
+                                        <span asp-validation-for="Descripcion" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="student-submit">
+                                        <button type="submit" class="btn btn-primary">Grabar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

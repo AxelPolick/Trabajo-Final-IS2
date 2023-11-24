@@ -1,0 +1,41 @@
+﻿@model PaymentViewModel
+@{
+    ViewData["Title"] = "Site Matricula";
+    var bloque = ViewBag.Bloque as Bloque;
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="jumbotron">
+            @if(TempData["error"] != null)
+            {
+                <div class="text-danger">
+                    @TempData["error"]
+                </div>
+            }
+            else if (TempData["succes"] != null)
+            {
+                <div class="text-danger">
+                    @TempData["succes"]
+                </div>
+            }
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="~/assets//img/logo.png" width="200" height="250" />
+                </div>
+                <div class="col-sm-9">
+                    <h3 class="text-primary">@bloque.Nombre</h3>
+                    <p>
+                        @($"{bloque.Disciplina} - {bloque.Ubicacion}")
+                    </p>
+                    <form method="post" asp-action="PayUsingCard">
+                        <label class="text-danger">Ingresar Precio</label>
+                        <input asp-for="Amount" id="precio" value="@bloque.Precio" readonly/>
+                        <button class="btn btn-success" type="submit"><i class="fab fa-paypal"></i> Realizar Pago</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

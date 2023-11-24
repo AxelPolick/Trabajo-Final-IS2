@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Resultado Transaccion";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        <div class="text-danger">
+            ID Transaccion: @ViewData["PaymentId"]
+        </div>
+        <div class="text-danger">
+            Token: @ViewData["token"]
+        </div>
+        <div class="text-danger">
+            Id pagador: @ViewData["payerId"]
+        </div>
+
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Regresar</a>
+    </div>
+</div>

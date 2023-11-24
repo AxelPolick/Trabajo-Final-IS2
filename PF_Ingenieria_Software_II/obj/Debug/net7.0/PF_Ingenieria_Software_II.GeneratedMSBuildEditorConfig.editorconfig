@@ -1,0 +1,137 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PF_Ingenieria_Software_II
+build_property.RootNamespace = PF_Ingenieria_Software_II
+build_property.ProjectDir = C:\Users\axelp_0es085i\OneDrive\Escritorio\PF_Ingenieria_Software_II\PF_Ingenieria_Software_II\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\axelp_0es085i\OneDrive\Escritorio\PF_Ingenieria_Software_II\PF_Ingenieria_Software_II
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Bloque/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvcXVlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Bloque/CursoPorUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvcXVlXEN1cnNvUG9yVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Bloque/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvcXVlXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Bloque/ListarBloques.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvcXVlXExpc3RhckJsb3F1ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Cargo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZ29cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Cargo/ListarCargos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZ29cTGlzdGFyQ2FyZ29zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Disciplina/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Disciplina/ListarDisciplinas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxMaXN0YXJEaXNjaXBsaW5hcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Home/SiteMatricula.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaXRlTWF0cmljdWxhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Home/Succes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWNjZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Horario/SeleccionarBloque.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb1xTZWxlY2Npb25hckJsb3F1ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Horario/SeleccionarHorario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb1xTZWxlY2Npb25hckhvcmFyaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Horario/VisualizarHorario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9yYXJpb1xWaXN1YWxpemFySG9yYXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Landing/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFuZGluZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Tutor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHV0b3JcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Tutor/ListarTutores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHV0b3JcTGlzdGFyVHV0b3Jlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Usuario/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Usuario/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Usuario/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Usuario/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Usuario/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Usuario/Perfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xQZXJmaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/axelp_0es085i/OneDrive/Escritorio/PF_Ingenieria_Software_II/PF_Ingenieria_Software_II/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-5gve6340za

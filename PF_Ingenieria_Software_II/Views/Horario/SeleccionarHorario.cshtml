@@ -1,0 +1,116 @@
+﻿@model List<PF_Ingenieria_Software_II.Models.Sesion>
+@{
+    ViewData["Title"] = "Seleccionar Horario";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Elegir bloque</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">Inicio</li>
+                        <li class="breadcrumb-item">Site de matrícula</li>
+                        <li class="breadcrumb-item">Elegir bloque</li>
+                        <li class="breadcrumb-item active">Elegir horario</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="student-group-form">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Buscar por ID ...">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Buscar por ...">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Buscar por ...">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="search-student-btn">
+                        <button type="button" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+
+                        <div class="page-header">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h3 class="page-title">Bloques</h3>
+                                </div>
+                                <div class="col-auto text-end float-end ms-auto download-grp">
+                                    <a href="add-department.html" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form method="post" asp-controller="Horario" asp-action="SeleccionarSesion">
+                            @if (Model != null && Model.Count > 0)
+                            {
+                                <table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
+                                    <thead class="student-thread">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Hora de inicio</th>
+                                            <th c>Hora de fin</th>
+                                            <th class="text-end"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var sesion in Model)
+                                        {
+
+                                            <tr>
+                                                <td>@(sesion.Id)</td>
+                                                <td>@(sesion.HoraInicio?.ToString("HH:mm") ?? "")</td>
+                                                <td>@(sesion.HoraFin?.ToString("HH:mm") ?? "")</td>
+                                                <td>
+                                                    <input type="hidden" name="idSesion" value="@sesion.Id" />
+                                                    <button type="submit">Seleccionar</button>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            }
+                            else
+                            {
+                                <p>Modelo nulo o sin sesiones disponibles.</p>
+                            }
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/feather.min.js"></script>
+
+<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/plugins/datatables/datatables.min.js"></script>
+
+<script src="assets/js/script.js"></script>
