@@ -1,0 +1,53 @@
+﻿@using PF_Ingenieria_Software_II.Models
+@{
+	ViewData["Title"] = "Horario";
+}
+<div class="page-wrapper">
+	<div class="content container-fluid">
+
+		<div class="page-header">
+			<div class="row align-items-center">
+				<div class="col">
+					<h3 class="page-title">Horario</h3>
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+						<li class="breadcrumb-item active">Horario</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<div id="calendar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+@section scripts {
+<script src="~/fullcalendar-6.1.9/dist/index.global.js"></script>
+<script>
+	var url = '/api/ApiSesion';
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+            },
+            events: url
+        });
+
+        calendar.render();
+    });
+
+</script>
+}

@@ -1,0 +1,206 @@
+﻿@model PF_Ingenieria_Software_II.Models.TutorViewModel
+@using PF_Ingenieria_Software_II.Services
+@{
+    ViewData["Title"] = "Registrar Tutor";
+    var tutorService = ViewBag.TutorService as TutorService;
+    var usuarioService = ViewBag.UsuarioService as UsuarioService;
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Registrar Tutor</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("ListarTutores", "Tutor")">Tutor</a></li>
+                        <li class="breadcrumb-item active">Registrar Tutor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="formulario" asp-controller="Tutor" asp-action="CreateTutor" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Información Personal</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Tutor ID <span class="login-danger">*</span></label>
+                                        <input asp-for="Id" type="text" name="Id" id="IdTutor" class="form-control" readonly>
+                                        <span asp-validation-for="Id" class="text-validation"></span>
+                                        <input type="hidden" asp-for="UsuarioId" name="IdUser" id="IdUser" class="form-control">
+                                        <span asp-validation-for="UsuarioId" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Nombre <span class="login-danger">*</span></label>
+                                        <input asp-for="Nombres" type="text" name="Nombres" id="Nombres" class="form-control" placeholder="Ingrese Nombre" required>
+                                        <span asp-validation-for="Nombres" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Apellido Paterno <span class="login-danger">*</span></label>
+                                        <input asp-for="ApellidoPaterno" type="text" name="ApellidoPaterno" id="ApellidoPaterno" class="form-control" placeholder="Ingrese Apellido Paterno" required>
+                                        <span asp-validation-for="ApellidoPaterno" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Apellido Materno <span class="login-danger">*</span></label>
+                                        <input asp-for="ApellidoMaterno" type="text" name="ApellidoMaterno" id="ApellidoMaterno" class="form-control" placeholder="Ingrese Apellido Materno" required>
+                                        <span asp-validation-for="ApellidoMaterno" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Edad <span class="login-danger">*</span></label>
+                                        <input asp-for="Edad" type="number" name="Edad" id="Edad" class="form-control" placeholder="Ingrese Edad" required>
+                                        <span asp-validation-for="Edad" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Telefono <span class="login-danger">*</span></label>
+                                        <input asp-for="Telefono" type="number" name="Telefono" id="Telefono" class="form-control" placeholder="Ingrese Telefono" required>
+                                        <span asp-validation-for="Telefono" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Dirección <span class="login-danger">*</span></label>
+                                        <input asp-for="Direccion" type="text" name="Direccion" id="Direccion" class="form-control" placeholder="Ingrese Direccion" required>
+                                        <span asp-validation-for="Direccion" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Tipo Documento <span class="login-danger">*</span></label>
+                                        <select asp-for="NombreDocumento" class="form-control select" asp-items="ViewBag.NombreDocumento" name="NombreDocumento" id="NombreDocumento" id="NombreDocumento"></select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Numero Documento <span class="login-danger">*</span></label>
+                                        <input asp-for="NroDocumento" type="number" name="NroDocumento" id="NroDocumento" class="form-control" placeholder="Ingrese NroDocumento" required>
+                                        <span asp-validation-for="NroDocumento" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Rol <span class="login-danger">*</span></label>
+                                        <input asp-for="NombreRol" type="text" name="NombreRol" id="NombreRol" class="form-control" value="Tutor" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Especialidades <span class="login-danger">*</span></label>
+                                        @foreach (var disciplina in Model.Disciplinas)
+                                        {
+                                            <div style="margin-top: 20px;">
+                                                <input type="checkbox" name="DisciplinasSeleccionadas" value="@disciplina.Id" id="disciplina_@disciplina.Id">
+                                                <span>@disciplina.Nombre</span>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Credenciales</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Email <span class="login-danger">*</span></label>
+                                        <input asp-for="Correo" type="email" name="Correo" id="Correo" placeholder="Email" class="form-control" required>
+                                        <span asp-validation-for="Correo" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Contraseña <span class="login-danger">*</span></label>
+                                        <input asp-for="Contrasena" type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" class="form-control" required>
+                                        <span asp-validation-for="Contrasena" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Repetir Contraseña <span class="login-danger">*</span></label>
+                                        <input asp-for="ConfirmarContrasena" type="password" name="ConfirmarContrasena" id="ConfirmarContrasena" placeholder="Repetir Contraseña" class="form-control" required>
+                                        <span asp-validation-for="ConfirmarContrasena" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Contrato</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Cargo <span class="login-danger">*</span></label>
+                                        <select asp-for="NombreCargo" class="form-control select" asp-items="ViewBag.NombreCargo" name="NombreCargo" id="NombreCargo" id="NombreCargo"></select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Salario <span class="login-danger">*</span></label>
+                                        <input asp-for="Salario" type="number" name="Salario" id="Salario" class="form-control" placeholder="Ingrese Salario" required>
+                                        <span asp-validation-for="Salario" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms calendar-icon">
+                                        <label>Fecha Inicio <span class="login-danger">*</span></label>
+                                        <input asp-for="FechaInicio" name="FechaInicio" id="FechaInicio" class="form-control datetimepicker" type="text" placeholder="DD-MM-YYYY" required>
+                                        <span asp-validation-for="FechaInicio" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms calendar-icon">
+                                        <label>Fecha Fin <span class="login-danger">*</span></label>
+                                        <input asp-for="FechaFin" name="FechaFin" id="FechaFin" class="form-control datetimepicker" type="text" placeholder="DD-MM-YYYY" required>
+                                        <span asp-validation-for="FechaFin" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="student-submit">
+                                        <button type="submit" class="btn btn-primary">Grabar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        // Función para formatear la fecha a "YYYY-MM-DD"
+        function formatDate(dateString) {
+            var parts = dateString.split("-");
+            return parts[2] + "-" + parts[1] + "-" + parts[0];
+        }
+
+        // Evento que se dispara al enviar el formulario
+        document.getElementById("formulario").addEventListener("submit", function () {
+            // Obtener el valor de FechaInicio y formatearlo
+            var fechaInicio = document.getElementById("FechaInicio").value;
+            document.getElementById("FechaInicio").value = formatDate(fechaInicio);
+
+            // Obtener el valor de FechaFin y formatearlo
+            var fechaFin = document.getElementById("FechaFin").value;
+            document.getElementById("FechaFin").value = formatDate(fechaFin);
+        });
+    </script>
+}

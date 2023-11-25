@@ -1,0 +1,118 @@
+﻿@inject PolideportivobdContext _context
+
+@using System.Security.Claims
+
+@model List<PF_Ingenieria_Software_II.Models.Bloque>
+@{
+    ViewData["Title"] = "Site de Matricula";
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Elegir bloque</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">Inicio</li>
+                        <li class="breadcrumb-item">Site de matrícula</li>
+                        <li class="breadcrumb-item active">Elegir bloque</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+
+                        <div class="page-header">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h3 class="page-title">Bloques</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form method="post" asp-controller="Horario" asp-action="SeleccionarSesion"> @* MOD Z *@
+                            @if (Model != null && Model.Count > 0)
+                            {
+                                <table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
+                                    <thead class="student-thread">
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Disciplina</th>
+                                            <th>Horario</th>
+                                            <th>Tutor a cargo</th>
+                                            <th>Ubicación</th>
+                                            <th class="text-end"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var bloque in Model) // (AXEL) TODO LO DE DENTRO - 1/3
+                                        {
+                                            <tr>
+                                                <td>@(bloque.Nombre)</td>
+                                                <td>@(bloque.DisciplinaId)</td>
+                                                <td>@(bloque.HorarioId)</td>
+                                                <td>@(bloque.TutorId)</td>
+                                                <td>@(bloque.Ubicacion)</td>
+                                                @if (!usuarioYaInscrito(bloque.Id))
+                                                {
+                                                    <td>
+                                                        <input type="hidden" name="idSesion" value="@bloque.Id" />
+                                                        <button type="submit">Escoger horario</button>
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td>Horario ya inscrito</td>
+                                                }
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            }
+                            else
+                            {
+                                <p>Modelo nulo o sin bloques disponibles.</p>
+                                // (AXEL) CAMBIE EL NOMBRE - 2/3
+                            }
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/feather.min.js"></script>
+
+<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="assets/plugins/datatables/datatables.min.js"></script>
+
+<script src="assets/js/script.js"></script>
+
+
+@functions {
+    // (AXEL) AGREGA TODO ESTO - 3/3
+    bool usuarioYaInscrito(int bloqueId)
+    {
+        // Obtener el Id del usuario actual
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        // Verificar si el usuario ya está inscrito en el bloque
+        return _context.Alumnos.Any(alumno => alumno.UsuarioId == int.Parse(userId) && _context.BloqueAlumnos.Any(ba => ba.AlumnoId == alumno.Id && ba.BloqueId == bloqueId));
+    }
+    }
+
+

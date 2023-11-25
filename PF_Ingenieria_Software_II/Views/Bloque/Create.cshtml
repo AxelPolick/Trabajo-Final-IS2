@@ -1,0 +1,146 @@
+﻿@model PF_Ingenieria_Software_II.Models.BloqueViewModel
+@using PF_Ingenieria_Software_II.Services
+@{
+    ViewData["Title"] = "Registrar Bloque";
+    var tutorService = ViewBag.TutorService as TutorService;
+    var usuarioService = ViewBag.UsuarioService as UsuarioService;
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Registrar Tutor</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("ListarBloques", "Bloque")">Bloques</a></li>
+                        <li class="breadcrumb-item active">Registrar Bloque</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="formulario" asp-controller="Bloque" asp-action="CreateBloque" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Información del Bloque</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Bloque ID <span class="login-danger">*</span></label>
+                                        <input asp-for="Id" type="text" name="Id" id="IdBloque" class="form-control" readonly>
+                                        <span asp-validation-for="Id" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Disciplina <span class="login-danger">*</span></label>
+                                        <select asp-for="NombreDisciplina" class="form-control select" asp-items="ViewBag.NombreDisciplina" name="NombreDisciplina" id="NombreDisciplina"></select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Tutor <span class="login-danger">*</span></label>
+                                        <select asp-for="ApellidoTutor" class="form-control select" asp-items="ViewBag.ApellidoTutores" name="ApellidoTutor" id="ApellidoTutor"></select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Ubicacion <span class="login-danger">*</span></label>
+                                        <input asp-for="Ubicacion" type="text" name="Ubicacion" id="Ubicacion" class="form-control" placeholder="Ingrese Ubicacion" required>
+                                        <span asp-validation-for="Ubicacion" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Precio <span class="login-danger">*</span></label>
+                                        <input asp-for="Precio" type="number" name="Precio" id="Precio" class="form-control" placeholder="Ingrese Precio" required>
+                                        <span asp-validation-for="Precio" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Sesiones</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms calendar-icon">
+                                        <label>Fecha Inicio <span class="login-danger">*</span></label>
+                                        <input asp-for="FechaInicio" name="FechaInicio" id="FechaInicio" class="form-control datetimepicker" type="text" placeholder="DD-MM-YYYY" required>
+                                        <span asp-validation-for="FechaInicio" class="text-validation"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Semanas del Ciclo <span class="login-danger">*</span></label>
+                                        <input asp-for="NumeroSemanas" type="number" name="NumeroSemanas" id="NumeroSemanas" class="form-control" placeholder="Ingrese Numero de Semanas" required>
+                                        <span asp-validation-for="NumeroSemanas" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Fechas durante semana <span class="login-danger">*</span></label>
+                                        @foreach (var dia in Model.Dias)
+                                        {
+                                            <div style="margin-top: 20px;">
+                                                <input type="checkbox" name="DiasSeleccionados" value="@dia" id="dia_@dia">
+                                                <span>@dia</span>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Hora Inicio <span class="login-danger">*</span></label>
+                                        <input asp-for="HoraInicio" type="time" name="HoraInicio" id="HoraInicio" class="form-control" placeholder="Ingrese Hora de Inicio" required>
+                                        <span asp-validation-for="HoraInicio" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <div class="form-group local-forms">
+                                        <label>Hora Fin <span class="login-danger">*</span></label>
+                                        <input asp-for="HoraFin" type="time" name="HoraFin" id="HoraFin" class="form-control" placeholder="Ingrese Hora Fin" required>
+                                        <span asp-validation-for="HoraFin" class="text-validation"></span>
+                                    </div>
+                                </div>
+                                
+
+                                <div class="col-12">
+                                    <div class="student-submit">
+                                        <button type="submit" class="btn btn-primary">Grabar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        // Función para formatear la fecha a "YYYY-MM-DD"
+        function formatDate(dateString) {
+            var parts = dateString.split("-");
+            return parts[2] + "-" + parts[1] + "-" + parts[0];
+        }
+
+        // Evento que se dispara al enviar el formulario
+        document.getElementById("formulario").addEventListener("submit", function () {
+            // Obtener el valor de FechaInicio y formatearlo
+            var fechaInicio = document.getElementById("FechaInicio").value;
+            document.getElementById("FechaInicio").value = formatDate(fechaInicio);
+
+            // Obtener el valor de FechaFin y formatearlo
+            var fechaFin = document.getElementById("FechaFin").value;
+            document.getElementById("FechaFin").value = formatDate(fechaFin);
+        });
+    </script>
+}
